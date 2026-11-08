@@ -577,8 +577,8 @@ a{
 
   /* COLLECTION */
   .collection-grid{
-    grid-template-columns:1fr;
-    gap:15px;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
     .collection-item__image{
     width:40%;
     margin:0 auto;
@@ -586,7 +586,7 @@ a{
   }
 
   .collection-item__image{
-    width:50%;
+    width:20%;
     height:auto;
   }
 
