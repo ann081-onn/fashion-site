@@ -580,7 +580,7 @@ a{
     grid-template-columns:1fr;
     gap:15px;
     .collection-item__image{
-    width:70%;
+    width:40%;
     margin:0 auto;
     height:auto;
   }
