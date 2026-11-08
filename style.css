@@ -519,7 +519,7 @@ a{
 
   /* ヘッダー */
   .site-header{
-    padding:12px 10px;
+    padding:12px 6px;
   }
 
   .site-header__inner{
@@ -578,7 +578,7 @@ a{
   /* COLLECTION */
   .collection-grid{
     grid-template-columns:1fr;
-    gap:30px;
+    gap:15px;
   }
 
   .collection-item__image{
@@ -587,6 +587,7 @@ a{
   }
 
   .collection-item__name{
+    font-size:6px;
     text-align:center;
   }
 
