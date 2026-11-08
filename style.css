@@ -512,11 +512,86 @@ a{
   }
 }
 
-.btn{
-    display:inline-block !important;
-    background:#333 !important;
-    color:#fff !important;
-    padding:15px 50px !important;
-    border-radius:50px !important;
-    margin-top:30px !important;
+/* =========================
+   スマホ対応
+========================= */
+@media (max-width:768px){
+
+  /* ヘッダー */
+  .site-header{
+    padding:12px 10px;
+  }
+
+  .site-header__inner{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .site-header__nav-list{
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .site-header__nav-list a{
+    font-size:11px;
+  }
+
+  /* HERO */
+  .hero{
+    padding:140px 20px 60px;
+  }
+
+  .hero__inner{
+    gap:20px;
+  }
+
+  .hero__visual{
+    height:45vh;
+  }
+
+  .hero__title{
+    font-size:24px;
+    line-height:1.4;
+  }
+
+  .hero__text{
+    font-size:12px;
+    text-align:center;
+  }
+
+  /* CONCEPT・ABOUT */
+  .section{
+    padding:70px 20px;
+  }
+
+  .section__title{
+    font-size:24px;
+    text-align:center;
+  }
+
+  .section p{
+    font-size:14px;
+    text-align:center;
+  }
+
+  /* COLLECTION */
+  .collection-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .collection-item__image{
+    width:100%;
+    height:auto;
+  }
+
+  .collection-item__name{
+    text-align:center;
+  }
+
+  .collection-item__desc{
+    text-align:center;
+  }
+
 }
