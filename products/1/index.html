@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagonal tulle mermaid dress - A.noël.</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+<!-- サイト共通ヘッダー -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <div class="site-header__logo">
+      <a href="../../index.html">A.noël.</a>
+    </div>
+    <nav class="site-header__nav">
+      <ul class="site-header__nav-list">
+        <li><a href="../../index.html#concept">CONCEPT</a></li>
+        <li><a href="../../index.html#collection">COLLECTION</a></li>
+        <li><a href="../../index.html#about">ABOUT</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="product-detail">
+
+  <!-- メイン写真（スワイプ対応） -->
+  <div class="product-main" id="sliderArea">
+    <img id="mainImage" src="../../images/a.jpg" alt="">
+
+    <!-- スライド用の画像リスト（非表示） -->
+    <div id="slideImages" style="display:none;">
+      <img src="../../images/a.jpg">
+      <img src="../../images/1.jpg">
+      <img src="../../images/1-1.jpg">
+    </div>
+  </div>
+
+  <!-- サムネイル -->
+  <div class="product-thumbs">
+    <img src="../../images/a.jpg" alt="" onclick="changeImage(0)">
+    <img src="../../images/1.jpg" alt="" onclick="changeImage(1)">
+    <img src="../../images/1-1.jpg" alt="" onclick="changeImage(2)">
+  </div>
+
+  <!-- 商品名 -->
+  <h1 class="product-detail__name">Diagonal tulle mermaid dress</h1>
+
+  <!-- 説明文 -->
+  <p class="product-detail__desc">
+    シンプルの中にもオシャレを取り組んで主役級のドレスへ<br>
+    シルエットを美しく見せるマーメイドラインが特徴です。
+  </p>
+
+  <div class="product-detail__line"></div>
+
+  <a href="../../index.html" class="back-button">← COLLECTION に戻る</a>
+
+  <!-- 下のチュール背景 -->
+  <div class="product-detail__footer-visual"></div>
+
+</section>
+
+<script>
+let currentIndex = 0;
+const mainImage = document.getElementById("mainImage");
+const slideImages = document.querySelectorAll("#slideImages img");
+
+// サムネイルクリック
+function changeImage(index){
+  currentIndex = index;
+  updateImage();
+}
+
+// スワイプ処理
+let startX = 0;
+const slider = document.getElementById("sliderArea");
+
+slider.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", (e) => {
+  let endX = e.changedTouches[0].clientX;
+  let diff = endX - startX;
+
+  if(diff > 50){
+    // 右スワイプ → 前の画像
+    prevImage();
+  } else if(diff < -50){
+    // 左スワイプ → 次の画像
+    nextImage();
+  }
+});
+
+// 次へ
+function nextImage(){
+  currentIndex = (currentIndex + 1) % slideImages.length;
+  updateImage();
+}
+
+// 前へ
+function prevImage(){
+  currentIndex = (currentIndex - 1 + slideImages.length) % slideImages.length;
+  updateImage();
+}
+
+// 画像更新＋フェード
+function updateImage(){
+  mainImage.src = slideImages[currentIndex].src;
+  mainImage.classList.add("fade");
+  setTimeout(() => mainImage.classList.remove("fade"), 600);
+}
+</script>
+
+</body>
+</html>
