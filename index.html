@@ -217,14 +217,36 @@
     }
   ];
 
+const pairs = [
+  {
+    el: document.getElementById("img1"),
+    imgs: ["images/dress.jpg", "images/1.jpg"]
+  },
+  {
+    el: document.getElementById("img2"),
+    imgs: ["images/dress2.jpg", "images/2.jpg"]
+  },
+  {
+    el: document.getElementById("img3"),
+    imgs: ["images/dress3.jpg", "images/3.jpg"]
+  }
+];
+
+/* PCのみ切り替え */
+if (window.innerWidth > 768) {
+
   let index = 0;
 
   setInterval(() => {
     index = (index + 1) % 2;
+
     pairs.forEach(pair => {
       pair.el.src = pair.imgs[index];
     });
+
   }, 3000);
+
+}
 </script>
 
 </body>
