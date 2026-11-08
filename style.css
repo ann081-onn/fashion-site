@@ -580,13 +580,13 @@ a{
     grid-template-columns:repeat(3,1fr);
     gap:10px;
     .collection-item__image{
-    width:40%;
+    width:50%;
     margin:0 auto;
     height:auto;
   }
 
   .collection-item__image{
-    width:50%;
+    width:60%;
     height:auto;
   }
 
